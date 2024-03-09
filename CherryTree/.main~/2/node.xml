@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cherrytree>
-  <node name="01. Creating App" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1709844901" ts_lastsave="1709956954">
+  <node name="01. Creating App" unique_id="2" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="0" foreground="" ts_creation="1709844901" ts_lastsave="1709956942">
     <rich_text background="#777776767b7b" weight="heavy">[+] Create App </rich_text>
     <rich_text>
 
@@ -44,9 +44,7 @@ e Importamos las fuentes:
  &lt;link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&amp;display=swap" rel="stylesheet"&gt;
 </rich_text>
     <rich_text>
-[+] Agregamos unos stylos al CSS
 
-[+]
 
 
 
