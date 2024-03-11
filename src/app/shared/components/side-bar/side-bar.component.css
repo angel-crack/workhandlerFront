@@ -1,0 +1,33 @@
+.side-bar-root {
+    background-color: var(--color-2);
+    width: var(--side-bar-Width);
+    height: var(--side-bar-Height);
+    position: fixed;
+    left: var(--gap);
+    top: var(--gap);
+    border-radius: var(--border-radius);
+}
+.side-bar{
+    padding: 1rem;
+}
+.side-bar__tittle{
+    font-weight: bold;
+    text-align: center;
+    font-size: xx-large;
+}
+.side-bar__list{
+    list-style: none;
+    padding: 0;
+}
+.list-wrapper-item{
+    font-size: x-large;
+    margin: 1rem 0;
+    cursor: pointer;
+    width: auto;
+}
+.list-wrapper-item:hover{
+    font-weight: bold;
+}
+.bold{
+    font-weight: bold;
+}

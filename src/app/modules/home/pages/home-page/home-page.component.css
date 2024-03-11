@@ -1,0 +1,14 @@
+.home {
+    background-color: var(--color-2);
+    width: var(--home-Width);
+    height: var(--home-Height);
+    position: fixed;
+    left: calc(var(--side-bar-Width) + 2 * var(--gap));
+    top: calc(var(--header-user-Height) + 2 * var(--gap));
+    border-radius: var(--border-radius);  
+    padding: 1rem 0.5rem 0 0.5rem;
+    overflow-y: scroll;
+}
+.home::-webkit-scrollbar {
+    display: none;
+  }

@@ -1,0 +1,12 @@
+.header-user-root{
+    background-color: var(--color-2);
+    width: var(--header-user-Width);
+    height: var(--header-user-Height);
+    position: fixed;
+    left: calc(var(--side-bar-Width) + 2 * var(--gap));
+    top: var(--gap);
+    border-radius: var(--border-radius);
+}
+.header-user{
+    padding: 1rem;
+}

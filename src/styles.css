@@ -1,4 +1,22 @@
 :root {
+
+
+    /* Basics for Landing */
+    --gap: 0.8rem;
+    --side-bar-Width: 17vw;
+    --header-user-Height: 10vh;
+    --side-bar-Height: calc(100vh - 2 * var(--gap));
+    --header-user-Width: calc(100vw - (3 * var(--gap)) - var(--side-bar-Width));
+    --home-Height: calc(100vh - (4 * var(--gap)) - var(--header-user-Height));
+    --home-Width: calc(var(--header-user-Width) - var(--gap));
+
+    /* Case Card */
+    --case-card-width: calc(var(--home-Width) * (0.95/3)) ;
+    --case-card-height: calc(var(--home-Height) * (0.9/3)) ;
+    --case-card-bkg: #5f8bce;
+    --case-card-text_area-bkg: rgb(19, 4, 117);
+
+    --border-radius: 1rem;
     --color-1: #ECEEEE;
     --color-2: #F9FBFB;
     --color-3: #000000;
@@ -13,16 +31,33 @@
     --border-radius-2: .5rem;
     --font-family-1: 'Titillium Web', sans-serif;
     --animation-1: 200ms;
+
 }
 
 html,
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--color-3);
+    background-color: var(--color-1);
     font-family: var(--font-family-1);
     font-size: var(--font-size-1);
-    color: var(--color-4);
+    color: var(--color-3);
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 0;
+    margin: 0;
 }
 
 input,
@@ -34,4 +69,3 @@ button {
 button:disabled {
     opacity: .5;
 }
-    

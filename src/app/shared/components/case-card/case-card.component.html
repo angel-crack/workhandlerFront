@@ -1,0 +1,35 @@
+<div class="case-card">
+  <div class="header">
+    <div class="options">
+      <ul>
+        <li>
+          <i (click)="showMenu()" class="uil uil-angle-down"></i>
+          <div class="dropdown-content" [ngClass]="{'':visible === false,'visible':visible === true}">
+            <ul class="nav-menu">
+              <li>WebEx Notes</li>
+              <li>Trace Analysis</li>
+              <li (click)="showMenu()">Close</li>
+            </ul>
+          </div>
+        </li>
+        <li><i class="uil uil-archive"></i></li>
+        <li><i class="uil uil-trash-alt"></i></li>
+      </ul>
+    </div>
+    <div class="title">
+      <p>{{checkName(case.name,case.number)}}</p>
+    </div>
+  </div>
+  <div class="code-container">
+    <textarea readonly="" name="code" id="code" class="area">Problem Description:
+{{case.problem_description}}
+
+Last Action:
+{{case.last_action}}
+
+Action Plan:
+{{case.action_plan}}
+
+    </textarea>
+  </div>
+</div>

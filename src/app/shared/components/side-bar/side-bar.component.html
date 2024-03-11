@@ -1,1 +1,13 @@
-<p>side-bar works!</p>
+<div class="side-bar-root">
+    <div class="side-bar">
+        <p class="side-bar__tittle">Dashboard</p>
+        <ul class="side-bar__list">
+            <li [routerLink]="item.router" *ngFor="let item of mainMenu">
+                <div class="list-wrapper-item">
+                    <i [ngClass]="item.icon"></i>
+                    <span class="side-bar__list list-label"> {{item.name}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
