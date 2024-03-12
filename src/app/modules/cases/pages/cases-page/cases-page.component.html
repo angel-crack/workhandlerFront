@@ -1,3 +1,3 @@
 <div class="cases-page">
-    <app-case-card [case]="case" *ngFor="let case of cases"></app-case-card>
+    <app-case-card [case]="case" *ngFor="let case of cases|caseFilter:'cases'"></app-case-card>
 </div>

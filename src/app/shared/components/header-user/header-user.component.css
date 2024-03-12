@@ -6,7 +6,13 @@
     left: calc(var(--side-bar-Width) + 2 * var(--gap));
     top: var(--gap);
     border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .header-user{
     padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }

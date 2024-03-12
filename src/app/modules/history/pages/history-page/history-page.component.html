@@ -1,1 +1,3 @@
-<p>history-page works!</p>
+<div class="history-page">
+    <app-case-card [case]="case" *ngFor="let case of cases|caseFilter:'history'"></app-case-card>
+</div>

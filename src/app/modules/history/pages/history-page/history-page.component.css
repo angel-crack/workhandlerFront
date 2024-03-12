@@ -1,0 +1,7 @@
+.history-page{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0.2rem;
+    row-gap: 1.3rem;
+}
