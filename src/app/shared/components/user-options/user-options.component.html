@@ -1,0 +1,16 @@
+<div class="dropdown" [ngClass]="{'':visible === false,'visible':visible === true}">
+    <ul>
+        <div class="first-li">
+            <li class="email">
+                <i class="uil uil-user"></i> 
+                Profile
+            </li>
+            <li (click)="showMenu()" class="close">
+                <i class="uil uil-times-circle"></i>
+            </li>
+        </div>
+        <li><i class="uil uil-setting"></i> Settings</li>
+        <li><i class="uil uil-question"></i> Help</li>
+        <li><i class="uil uil-sign-out-alt"></i> LogOut</li>
+    </ul>
+</div>

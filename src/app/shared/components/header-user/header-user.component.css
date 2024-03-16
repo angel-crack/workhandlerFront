@@ -2,7 +2,7 @@
     background-color: var(--color-2);
     width: var(--header-user-Width);
     height: var(--header-user-Height);
-    position: fixed;
+    position: relative;
     left: calc(var(--side-bar-Width) + 2 * var(--gap));
     top: var(--gap);
     border-radius: var(--border-radius);
@@ -11,8 +11,18 @@
     justify-content: space-between;
 }
 .header-user{
-    padding: 1rem;
+    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     width: 100%;
+}
+
+.center-elements{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left-elements{
+    display: flex;
+    gap: 2rem;
 }

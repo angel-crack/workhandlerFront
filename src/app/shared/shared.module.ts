@@ -10,6 +10,9 @@ import { UserComponent } from './components/user/user.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { ViewComponent } from './components/view/view.component';
 import { FormsModule } from '@angular/forms';
+import { UserOptionsComponent } from './components/user-options/user-options.component';
+import { CaseCardOptionsComponent } from './components/case-card-options/case-card-options.component';
+import { WebexNotesModalComponent } from './components/modals/webex-notes-modal/webex-notes-modal.component';
 
 
 
@@ -22,7 +25,10 @@ import { FormsModule } from '@angular/forms';
     SearchComponent,
     UserComponent,
     FilterComponent,
-    ViewComponent
+    ViewComponent,
+    UserOptionsComponent,
+    CaseCardOptionsComponent,
+    WebexNotesModalComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +43,9 @@ import { FormsModule } from '@angular/forms';
     SearchComponent,
     UserComponent,
     FilterComponent,
-    ViewComponent
+    ViewComponent,
+    UserOptionsComponent,
+    CaseCardOptionsComponent
   ]
 })
 export class SharedModule { }

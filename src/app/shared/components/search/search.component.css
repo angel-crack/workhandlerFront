@@ -6,4 +6,5 @@
     padding: 0 .75rem;
     font-size: 90%;
     border: 2px solid var(--case-card-text_area-bkg);
+    cursor: text;
 }

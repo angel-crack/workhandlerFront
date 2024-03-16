@@ -1,1 +1,11 @@
-<p>user works!</p>
+<div class="user-section">
+
+    <div class="user-name">
+        <p>Angel Ubarnes</p>
+        <p>Tier 2 Engineer</p>
+    </div>
+    <div (click)="showMenu()" class="profile-picture" [ngClass]="{'menuActive':menuActive === true,'':menuActive === false}">
+        <p>AU</p>
+    </div>
+    <app-user-options (menuActive)="receiveData($event)"></app-user-options>
+</div>

@@ -1,1 +1,5 @@
-<p>view works!</p>
+<div class="view">
+    <i class="uil uil-list-ol" (click)="selectingComponent('ol')" [ngClass]="{'selected':selectedCoponent ==='ol'}"></i>
+    <i class="uil uil-apps" (click)="selectingComponent('apps')" [ngClass]="{'selected':selectedCoponent ==='apps'}"></i>
+    <i class="uil uil-dialpad" (click)="selectingComponent('dialpad')" [ngClass]="{'selected':selectedCoponent ==='dialpad'}"></i>
+</div>

@@ -1,0 +1,35 @@
+.profile-picture{
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--case-card-bkg);
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+.profile-picture:hover{
+    background-color: var(--case-card-text_area-bkg);
+    cursor: pointer;
+}
+.user-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.user-name > p + p{
+    font-weight: bold;
+    font-size: small;
+}
+.user-name > p {
+    font-size: large;
+}
+.menuActive{
+    background-color: var(--case-card-text_area-bkg);
+    cursor: pointer;
+}

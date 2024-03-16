@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { CaseModel } from 'src/app/core/models/cases.models';
+import { CaseCardOptionsComponent } from '../case-card-options/case-card-options.component';
 
 @Component({
   selector: 'app-case-card',
@@ -7,6 +8,7 @@ import { CaseModel } from 'src/app/core/models/cases.models';
   styleUrls: ['./case-card.component.css']
 })
 export class CaseCardComponent {
+  
   @Input() case: CaseModel = {
     'name' : '',
     'number' : '',
@@ -16,6 +18,9 @@ export class CaseCardComponent {
     'action_plan' : '',
     'last_action' : ''
   }
+
+  @ViewChild(CaseCardOptionsComponent) child!:CaseCardOptionsComponent;
+
   visible: boolean = false
 
 
@@ -27,6 +32,9 @@ export class CaseCardComponent {
     return completeName
   }
   showMenu():void {
-    this.visible = !this.visible
+    this.child.showMenu();
+  }
+  receiveData(IsActive:boolean):void {
+    console.log(IsActive)
   }
 }

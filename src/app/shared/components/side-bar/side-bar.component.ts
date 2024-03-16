@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { NavigationEnd, Router, RouterEvent } from '@angular/router';
 import { OptionModel } from 'src/app/core/models/options.models';
 
 @Component({
@@ -6,9 +7,9 @@ import { OptionModel } from 'src/app/core/models/options.models';
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.css']
 })
-export class SideBarComponent {
+export class SideBarComponent{
   
-
+  currentRouter: string = 'cases'
   mainMenu: OptionModel[] = [
     {
       name: 'Cases',
@@ -36,6 +37,10 @@ export class SideBarComponent {
       router: ['/','options']
     }
   ]
+  
+  setModule(name:string){
+    this.currentRouter = name;
+  }
 
 
 }

@@ -1,0 +1,19 @@
+.sort{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    border: solid 1px var(--color-1);
+    border-radius: 6px;
+    padding: 0.25rem 0.5rem;
+}
+.text{
+    padding: 0 0.5rem;
+}
+
+.sort:hover{
+    border: solid 1px black;
+    border-radius: 6px;
+    box-shadow: inset 0px 0px 4px 0px rgb(73, 70, 92);
+    cursor: pointer;
+}
