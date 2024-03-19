@@ -13,7 +13,13 @@ import { FormsModule } from '@angular/forms';
 import { UserOptionsComponent } from './components/user-options/user-options.component';
 import { CaseCardOptionsComponent } from './components/case-card-options/case-card-options.component';
 import { WebexNotesModalComponent } from './components/modals/webex-notes-modal/webex-notes-modal.component';
-
+import {MatButtonModule} from '@angular/material/button'; 
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatMenuModule} from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -33,7 +39,14 @@ import { WebexNotesModalComponent } from './components/modals/webex-notes-modal/
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatFormFieldModule, 
+    MatInputModule, 
+    MatIconModule,
+    MatMenuModule,
+    MatDialogModule
   ],
   exports: [
     SideBarComponent,

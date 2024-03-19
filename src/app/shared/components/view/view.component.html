@@ -1,5 +1,11 @@
-<div class="view">
-    <i class="uil uil-list-ol" (click)="selectingComponent('ol')" [ngClass]="{'selected':selectedCoponent ==='ol'}"></i>
-    <i class="uil uil-apps" (click)="selectingComponent('apps')" [ngClass]="{'selected':selectedCoponent ==='apps'}"></i>
-    <i class="uil uil-dialpad" (click)="selectingComponent('dialpad')" [ngClass]="{'selected':selectedCoponent ==='dialpad'}"></i>
-</div>
+<mat-button-toggle-group #group="matButtonToggleGroup" value="right">
+    <mat-button-toggle value="left">
+        <i class="uil uil-list-ol"></i>
+    </mat-button-toggle>
+    <mat-button-toggle value="center">
+        <i class="uil uil-apps"></i>
+    </mat-button-toggle>
+    <mat-button-toggle value="right">
+        <i class="uil uil-dialpad"></i>
+    </mat-button-toggle>
+  </mat-button-toggle-group>

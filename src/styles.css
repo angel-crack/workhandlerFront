@@ -4,7 +4,7 @@
     /* Basics for Landing */
     --gap: 0.8rem;
     --side-bar-Width: 17vw;
-    --header-user-Height: 10vh;
+    --header-user-Height: 11vh;
     --side-bar-Height: calc(100vh - 2 * var(--gap));
     --header-user-Width: calc(100vw - (3 * var(--gap)) - var(--side-bar-Width));
     --home-Height: calc(100vh - (4 * var(--gap)) - var(--header-user-Height));
@@ -69,3 +69,6 @@ button {
 button:disabled {
     opacity: .5;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
