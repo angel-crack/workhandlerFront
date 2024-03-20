@@ -1,12 +1,17 @@
-<div>
-    <div class="title">
-        <p>Titulo Aqui</p>
-    </div>
-    <div class="summary">
-        <p>summary</p>
-    </div>
-    <div class="tittle-action">
-        <p>tittle action</p>
-    </div>
-    <button mat-raised-button>Basic</button>
+<div class="container">
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Action</mat-label>
+          <input matInput placeholder="Customer removed phones-pt from CSS" value="{{action}}">
+        </mat-form-field>
+      
+        <mat-form-field class="example-full-width webex-summary">
+          <mat-label>WebEx Summary</mat-label>
+          <textarea matInput rows="16" cols="40" placeholder="[+] Mon 24/March - 09:30:10 - Customer removed phones-pt from CSS" value="{{webexSummary}}"></textarea>
+        </mat-form-field>
+      </form>
+    <button class="modal-button" mat-raised-button *ngFor="let item of buttons">
+      <span>{{item.name}}</span>
+      <mat-icon>{{item.icon}}</mat-icon>
+    </button>
 </div>

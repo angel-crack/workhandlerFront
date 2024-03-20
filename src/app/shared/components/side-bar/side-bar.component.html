@@ -4,7 +4,7 @@
         <ul class="side-bar__list">
             <li [routerLink]="item.router" *ngFor="let item of mainMenu">
                 <div class="list-wrapper-item" (click)="setModule(item.name)">
-                    <i [ngClass]="item.icon"></i>
+                    <mat-icon>{{item.icon}}</mat-icon>
                     <span class="side-bar__list list-label" [ngClass]="{'bold':currentRouter === item.name}"> {{item.name}}</span>
                 </div>
             </li>

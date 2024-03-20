@@ -1,1 +1,17 @@
-<button mat-button >Sort by</button>
+<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>swap_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>sort_by_alpha</mat-icon>
+      <span>Name</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>date_range</mat-icon>
+      <span>Date</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>123</mat-icon>
+      <span>SR Number</span>
+    </button>
+  </mat-menu>

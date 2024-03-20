@@ -13,27 +13,27 @@ export class SideBarComponent{
   mainMenu: OptionModel[] = [
     {
       name: 'Cases',
-      icon: 'uil uil-folder',
+      icon: 'folder',
       router: ['/','cases']
     },
     {
       name: 'Cases Reviews',
-      icon: 'uil uil-align-alt',
+      icon: 'newspaper',
       router: ['/','templates']
     },
     {
       name: 'Notes',
-      icon: 'uil uil-notes',
+      icon: 'note_alt',
       router: ['/','notes']
     },
     {
       name: 'History',
-      icon: 'uil uil-history',
+      icon: 'history',
       router: ['/','history']
     },
     {
       name: 'Options',
-      icon: 'uil uil-setting',
+      icon: 'settings',
       router: ['/','options']
     }
   ]
