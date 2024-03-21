@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { CaseModel } from 'src/app/core/models/cases.models';
-import { CaseCardOptionsComponent } from '../case-card-options/case-card-options.component';
-
+import { WebexNotesModalComponent } from '../modals/webex-notes-modal/webex-notes-modal.component';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-case-card',
   templateUrl: './case-card.component.html',
@@ -9,6 +9,8 @@ import { CaseCardOptionsComponent } from '../case-card-options/case-card-options
 })
 export class CaseCardComponent {
   
+  constructor(private dialogRef: MatDialog) {}
+
   @Input() case: CaseModel = {
     'name' : '',
     'number' : '',
@@ -19,10 +21,6 @@ export class CaseCardComponent {
     'last_action' : ''
   }
 
-  @ViewChild(CaseCardOptionsComponent) child!:CaseCardOptionsComponent;
-
-  visible: boolean = false
-
 
   checkName(caseName:string,caseNumber:string){
     var completeName = caseNumber + ' - ' + caseName;
@@ -31,10 +29,12 @@ export class CaseCardComponent {
     }
     return completeName
   }
-  showMenu():void {
-    this.child.showMenu();
+
+  openModal():void {
+    this.dialogRef.open(WebexNotesModalComponent,{
+      height: '70vh',
+      width: '60vw',
+    })
   }
-  receiveData(IsActive:boolean):void {
-    console.log(IsActive)
-  }
+
 }

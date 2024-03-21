@@ -1,24 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SideBarComponent } from './components/side-bar/side-bar.component';
-import { HeaderUserComponent } from './components/header-user/header-user.component';
+import { SideBarComponent } from '../modules/home/components/side-bar/side-bar.component';
+import { HeaderUserComponent } from '../modules/home/components/header/header-user/header-user.component';
 import { RouterModule } from '@angular/router';
 import { CaseCardComponent } from './components/case-card/case-card.component';
 import { CaseFilterPipe } from './pipes/case-filter.pipe';
-import { SearchComponent } from './components/search/search.component';
-import { UserComponent } from './components/user/user.component';
-import { FilterComponent } from './components/filter/filter.component';
-import { ViewComponent } from './components/view/view.component';
+import { SearchComponent } from '../modules/home/components/header/search/search.component';
+import { UserComponent } from '../modules/home/components/header/user/user.component';
+import { FilterComponent } from '../modules/home/components/header/filter/filter.component';
+import { ViewComponent } from '../modules/home/components/header/view/view.component';
 import { FormsModule } from '@angular/forms';
-import { UserOptionsComponent } from './components/user-options/user-options.component';
-import { CaseCardOptionsComponent } from './components/case-card-options/case-card-options.component';
 import { WebexNotesModalComponent } from './components/modals/webex-notes-modal/webex-notes-modal.component';
-import {MatButtonModule} from '@angular/material/button'; 
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
-import {MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button'; 
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 
 
@@ -32,8 +30,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     UserComponent,
     FilterComponent,
     ViewComponent,
-    UserOptionsComponent,
-    CaseCardOptionsComponent,
     WebexNotesModalComponent
   ],
   imports: [
@@ -56,9 +52,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     SearchComponent,
     UserComponent,
     FilterComponent,
-    ViewComponent,
-    UserOptionsComponent,
-    CaseCardOptionsComponent
+    ViewComponent
   ]
 })
 export class SharedModule { }

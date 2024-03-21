@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavigationEnd, Router, RouterEvent } from '@angular/router';
 import { OptionModel } from 'src/app/core/models/options.models';
 
 @Component({

@@ -3,18 +3,24 @@
     <div class="options">
       <ul>
         <li>
-          <i (click)="showMenu()" class="uil uil-angle-down"></i>
-          <app-case-card-options></app-case-card-options>
-          <!-- <div class="dropdown-content" [ngClass]="{'':visible === false,'visible':visible === true}">
-            <ul class="nav-menu">
-              <li>WebEx Notes</li>
-              <li>Trace Analysis</li>
-              <li (click)="showMenu()">Close</li>
-            </ul>
-          </div> -->
+          <button class="dropdown-button" mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>arrow_drop_down</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button (click)="openModal()" mat-menu-item>Webex Notes</button>
+            <button mat-menu-item>Trace Analysis</button>
+          </mat-menu>
         </li>
-        <li><i class="uil uil-archive"></i></li>
-        <li><i class="uil uil-trash-alt"></i></li>
+        <li>
+          <button class="dropdown-button" mat-icon-button>
+            <mat-icon>inventory_2</mat-icon>
+          </button>
+        </li>
+        <li>
+          <button class="dropdown-button" mat-icon-button>
+            <mat-icon>delete_forever</mat-icon>
+          </button>
+        </li>
       </ul>
     </div>
     <div class="title">

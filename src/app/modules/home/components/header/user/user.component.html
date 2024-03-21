@@ -1,0 +1,27 @@
+<div class="user-section">
+    <button class="profile" mat-icon-button [matMenuTriggerFor]="menu">
+        <span>AU</span> 
+    </button>
+    <mat-menu class="menu-options" #menu="matMenu">
+        <button class="persona" mat-menu-item>
+            <mat-icon>person</mat-icon>
+            <span>Profile</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>settings</mat-icon>
+            <span>Settings</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>help_alt</mat-icon>
+            <span>Help</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>logout</mat-icon>
+            <span>LogOut</span>
+        </button>
+    </mat-menu>
+    <div class="user-name">
+        <p>Angel Ubarnes</p>
+        <p>Tier 2 Engineer</p>
+    </div>
+</div>

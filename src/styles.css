@@ -72,3 +72,10 @@ button:disabled {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* CONFIGURACION A LOS ANGULAR MATERIAL */
+
+#mat-menu-panel-1{
+    margin-top: 0.5rem;
+}

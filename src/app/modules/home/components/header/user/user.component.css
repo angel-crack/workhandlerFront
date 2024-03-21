@@ -33,3 +33,14 @@
     background-color: var(--case-card-text_area-bkg);
     cursor: pointer;
 }
+button.profile{
+    padding: 0;
+    background-color: var(--case-card-bkg);
+}
+
+mat-menu.menu-options{
+    padding-top: 0.5rem;
+}
+
+
+

@@ -88,3 +88,18 @@ textarea::-webkit-scrollbar{
   cursor: pointer;
   border-radius: 6px;
 }
+
+
+
+button.dropdown-button{
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+button.dropdown-button > mat-icon{
+  font-size: 18px;
+}
