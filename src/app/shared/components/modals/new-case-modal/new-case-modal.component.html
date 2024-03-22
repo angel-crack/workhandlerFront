@@ -1,0 +1,30 @@
+<div class="container">
+    <form class="example-form">
+      <mat-form-field class="example-full-width webex-summary">
+        <mat-label>GCI Formatted</mat-label>
+        <textarea matInput name="webexSummary_list" rows="4" cols="40" placeholder="[+] Mon 24/March - 09:30:10 - Customer removed phones-pt from CSS"></textarea>
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width">
+        <mat-label>Tittle</mat-label>
+        <input matInput type="text" name="Tittle" placeholder="Call Routing Issues">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>SR</mat-label>
+        <input matInput type="text" name="sr" placeholder="697832132">
+      </mat-form-field>
+      
+      <mat-form-field class="example-full-width webex-summary">
+        <mat-label>Problem Description</mat-label>
+        <textarea matInput name="problemDescription" rows="4" cols="40" placeholder="Calls cannot be completed as dial, internal calls"></textarea>
+      </mat-form-field>
+
+      </form>
+    <button class="modal-button" mat-raised-button *ngFor="let button of buttons">
+      <span>{{button.name}}</span>
+      <mat-icon>{{button.icon}}</mat-icon>
+    </button>
+
+
+</div>

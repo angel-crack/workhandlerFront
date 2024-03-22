@@ -1,0 +1,10 @@
+mat-form-field{
+    display: block;
+}
+div.container{
+    padding: 1rem;
+}
+
+button.modal-button {
+    margin-right: 1rem;
+}

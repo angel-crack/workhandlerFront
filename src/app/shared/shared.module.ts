@@ -9,7 +9,7 @@ import { SearchComponent } from '../modules/home/components/header/search/search
 import { UserComponent } from '../modules/home/components/header/user/user.component';
 import { FilterComponent } from '../modules/home/components/header/filter/filter.component';
 import { ViewComponent } from '../modules/home/components/header/view/view.component';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule } from '@angular/forms';
 import { WebexNotesModalComponent } from './components/modals/webex-notes-modal/webex-notes-modal.component';
 import { MatButtonModule } from '@angular/material/button'; 
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -18,6 +18,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AddNewCaseComponent } from '../modules/home/components/header/add-new-case/add-new-case.component';
+import { AddNewWebexNotesComponent } from '../modules/home/components/header/add-new-webex-notes/add-new-webex-notes.component';
+import { NewCaseModalComponent } from './components/modals/new-case-modal/new-case-modal.component';
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     UserComponent,
     FilterComponent,
     ViewComponent,
-    WebexNotesModalComponent
+    WebexNotesModalComponent,
+    AddNewCaseComponent,
+    AddNewWebexNotesComponent,
+    NewCaseModalComponent
   ],
   imports: [
     CommonModule,
@@ -52,7 +58,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     SearchComponent,
     UserComponent,
     FilterComponent,
-    ViewComponent
+    ViewComponent,
+    AddNewCaseComponent,
+    AddNewWebexNotesComponent,
+    NewCaseModalComponent
   ]
 })
 export class SharedModule { }

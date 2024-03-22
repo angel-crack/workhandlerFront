@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CaseModel } from 'src/app/core/models/cases.models';
 import { WebexNotesModalComponent } from '../modals/webex-notes-modal/webex-notes-modal.component';
 import { MatDialog } from '@angular/material/dialog';
