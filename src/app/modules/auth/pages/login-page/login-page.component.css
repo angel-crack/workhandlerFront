@@ -1,0 +1,24 @@
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 40%;
+}
+mat-card-title{
+  padding: 1rem;
+}
+.email, .password{
+  display: block;
+}
+div.icon-container{
+  height: 7rem;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+.example-header-image {
+  background-image: url('../../../../../iconApp.png');
+  background-size: cover;
+  height: 100%;
+}

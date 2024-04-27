@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
+import { HttpClientModule } from '@angular/common/http';
+import {CookieService} from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -16,9 +18,11 @@ import { MatMenuModule } from '@angular/material/menu';
     BrowserModule,
     AppRoutingModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientModule
   ],
-  providers: [provideAnimations()],
+  providers: [provideAnimations(),
+              CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

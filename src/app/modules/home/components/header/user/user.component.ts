@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-user',
@@ -8,5 +10,9 @@ import { Component } from '@angular/core';
 
 
 export class UserComponent {
-
+constructor(private cookieService:CookieService, private router:Router){}
+logout(): void{
+  this.cookieService.delete('session');
+  this.router.navigate(['/auth'])
+}
 }
