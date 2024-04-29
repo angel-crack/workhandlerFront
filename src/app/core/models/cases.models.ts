@@ -1,7 +1,7 @@
 export interface CaseModel{
-    name: string,
+    _id: string,
+    tittle: string,
     number:string,
-    folder:string,
     problem_description:string,
     current_status:string,
     action_plan:string,

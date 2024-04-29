@@ -10,12 +10,12 @@ import { CaseModel } from 'src/app/core/models/cases.models';
 })
 export class HistoryPageComponent implements OnInit,OnDestroy{
   listObservers$: Subscription[] = []
-  cases: CaseModel[] = []
+  cases: [] = []
 
   constructor(private getCases:GetCasesService){}
 
   ngOnInit(): void {
-    const observer1$:Subscription = this.getCases.dataCases$.subscribe(
+    const observer1$:Subscription = this.getCases.getAllMyCases$('false').subscribe(
       (res) => {
         this.cases = res
       }

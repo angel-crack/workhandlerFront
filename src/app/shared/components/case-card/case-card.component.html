@@ -12,7 +12,7 @@
           </mat-menu>
         </li>
         <li>
-          <button class="dropdown-button" mat-icon-button>
+          <button (click)="showid()" class="dropdown-button" mat-icon-button>
             <mat-icon>inventory_2</mat-icon>
           </button>
         </li>
@@ -24,7 +24,7 @@
       </ul>
     </div>
     <div class="title">
-      <p>{{checkName(case.name,case.number)}}</p>
+      <p>{{checkName(case.tittle,case.number)}}</p>
     </div>
   </div>
   <div class="code-container">

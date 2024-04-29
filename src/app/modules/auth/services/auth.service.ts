@@ -20,7 +20,7 @@ export class AuthService {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
     }
     return this.http.post(
-      `${this.URL}auth`,
+      `${this.URL}/auth`,
       body.toString(), 
       options)
   }

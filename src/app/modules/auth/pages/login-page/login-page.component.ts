@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { AuthService } from '@modules/auth/services/auth.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Subscription } from 'rxjs';
+import { environment } from 'src/environments/environment.development';
+
 
 
 @Component({
@@ -48,7 +50,10 @@ export class LoginPageComponent implements OnInit, OnDestroy{
     const {email, password} = this.formLogin.value;
     this.authService.authenticate$(email,password).subscribe({
       next: v => {
-        this.cookieService.set('session', v.jwToken);
+        console.log("current token: ",this.cookieService.get(environment.tokenName))
+        console.log("response token: ",v.jwToken)
+        this.cookieService.set(environment.tokenName, v.jwToken);
+        console.log("token set: ", this.cookieService.get(environment.tokenName));
         this.router.navigate(['/','cases'])
       },
       error: e => {

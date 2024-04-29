@@ -1,4 +1,5 @@
 export const environment = {
     production: "false",
-    api: 'http://localhost:3069/api/'
+    api: 'http://localhost:3069/api',
+    tokenName: 'session'
 };

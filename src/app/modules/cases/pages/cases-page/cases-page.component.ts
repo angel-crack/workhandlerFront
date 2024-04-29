@@ -2,6 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { GetCasesService } from '@modules/cases/services/get-cases.service';
 import { Subscription } from 'rxjs';
 import { CaseModel } from 'src/app/core/models/cases.models';
+import { CaseFilterPipe } from 'src/app/shared/pipes/case-filter.pipe';
+import { NormalizeCasesPipe } from 'src/app/shared/pipes/normalize-cases.pipe';
 
 @Component({
   selector: 'app-cases-page',
@@ -11,12 +13,13 @@ import { CaseModel } from 'src/app/core/models/cases.models';
 export class CasesPageComponent implements OnInit, OnDestroy {
 
   listObservers$: Subscription[] = []
-  cases: CaseModel[] = []
+  cases: [] = []
 
   constructor(private getCases: GetCasesService){}
 
+  
   ngOnInit(): void {
-    const observer1$: Subscription = this.getCases.dataCases$.subscribe(
+    const observer1$: Subscription = this.getCases.getAllMyCases$('true').subscribe(
       (res) => {
         this.cases = res
       }

@@ -21,7 +21,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AddNewCaseComponent } from '../modules/home/components/header/add-new-case/add-new-case.component';
 import { AddNewWebexNotesComponent } from '../modules/home/components/header/add-new-webex-notes/add-new-webex-notes.component';
 import { NewCaseModalComponent } from './components/modals/new-case-modal/new-case-modal.component';
-
+import { NormalizeCasesPipe } from './pipes/normalize-cases.pipe';
+import {MatSnackBarModule} from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { NewCaseModalComponent } from './components/modals/new-case-modal/new-ca
     WebexNotesModalComponent,
     AddNewCaseComponent,
     AddNewWebexNotesComponent,
-    NewCaseModalComponent
+    NewCaseModalComponent,
+    NormalizeCasesPipe
   ],
   imports: [
     CommonModule,
@@ -48,13 +50,15 @@ import { NewCaseModalComponent } from './components/modals/new-case-modal/new-ca
     MatInputModule, 
     MatIconModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   exports: [
     SideBarComponent,
     HeaderUserComponent,
     CaseCardComponent,
     CaseFilterPipe,
+    NormalizeCasesPipe,
     SearchComponent,
     UserComponent,
     FilterComponent,
