@@ -1,11 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { GetCasesService } from '@modules/cases/services/get-cases.service';
+import { CasesService } from '@modules/cases/services/cases.service';
 import { Subscription } from 'rxjs';
-import { CaseOptionalModel } from 'src/app/core/models/cases-optional.models';
-import { CaseModel } from 'src/app/core/models/cases.models';
-import { CaseFilterPipe } from 'src/app/shared/pipes/case-filter.pipe';
-import { NormalizeCasesPipe } from 'src/app/shared/pipes/normalize-cases.pipe';
-import { SnackBarMessage } from '@modules/sub-modules/update_cases';
+import { SnackbarMessageComponent } from 'src/app/shared/sub-modules/snackbar-message/snackbar-message.component';
+
 
 @Component({
   selector: 'app-cases-page',
@@ -14,33 +11,33 @@ import { SnackBarMessage } from '@modules/sub-modules/update_cases';
 })
 export class CasesPageComponent implements OnInit, OnDestroy {
   
-  constructor(private getCases: GetCasesService){}
+  constructor(private caseService: CasesService, private snackMessage: SnackbarMessageComponent){}
 
   listObservers$: Subscription[] = []
   cases: [] = []
 
   
   ngOnInit(): void {
-    const observer1$: Subscription = this.getCases.getAllMyCases$('true').subscribe(
+    const observer1$: Subscription = this.caseService.getAllMyCases$('true').subscribe(
       (res) => {
         this.cases = res
       }
     )
     this.listObservers$ = [observer1$]
   }
+  
   ngOnDestroy(): void {
     this.listObservers$.forEach( m => m.unsubscribe)
   }
 
   updateCase( a: any ): void{
-    const observer2$: Subscription = this.getCases.refreshCasesAfterDeletion$(a.content, a.id, a.type).subscribe({
+    const observer2$: Subscription = this.caseService.refreshCasesAfterDeletion$(a.content, a.id, a.type).subscribe({
       next: updatedCases => {
-        this.cases = updatedCases; // Update the cases variable with the updated cases
-        
+        this.cases = updatedCases;
+        this.snackMessage.openSnack('Moved to history')
       },
       error: error => {
         console.error('Error refreshing cases after deletion:', error);
-        // Handle error if needed
       }
     });
     this.listObservers$.push(observer2$);

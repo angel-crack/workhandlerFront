@@ -1,8 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { GetCasesService } from '@modules/cases/services/get-cases.service';
+import { CasesService } from '@modules/cases/services/cases.service';
 import { Subscription } from 'rxjs';
-import { CaseOptionalModel } from 'src/app/core/models/cases-optional.models';
-import { CaseModel } from 'src/app/core/models/cases.models';
+import { SnackbarMessageComponent } from 'src/app/shared/sub-modules/snackbar-message/snackbar-message.component';
 
 @Component({
   selector: 'app-history-page',
@@ -10,13 +9,13 @@ import { CaseModel } from 'src/app/core/models/cases.models';
   styleUrls: ['./history-page.component.css']
 })
 export class HistoryPageComponent implements OnInit,OnDestroy{
-  constructor(private getCases:GetCasesService){}
+  constructor(private caseService:CasesService, private snackMessage: SnackbarMessageComponent){}
 
   listObservers$: Subscription[] = []
   cases: [] = []
 
   ngOnInit(): void {
-    const observer1$:Subscription = this.getCases.getAllMyCases$('false').subscribe(
+    const observer1$:Subscription = this.caseService.getAllMyCases$('false').subscribe(
       (res) => {
         this.cases = res
       }
@@ -29,13 +28,13 @@ export class HistoryPageComponent implements OnInit,OnDestroy{
   }
 
   updateCase( a: any): void{
-    const observer2$: Subscription = this.getCases.refreshCasesAfterDeletion$(a.content, a.id, a.type).subscribe({
+    const observer2$: Subscription = this.caseService.refreshCasesAfterDeletion$(a.content, a.id, a.type).subscribe({
       next: updatedCases => {
-        this.cases = updatedCases; // Update the cases variable with the updated cases
+        this.cases = updatedCases; 
+        this.snackMessage.openSnack('Moved to Cases')
       },
       error: error => {
         console.error('Error refreshing cases after deletion:', error);
-        // Handle error if needed
       }
     });
     this.listObservers$.push(observer2$);

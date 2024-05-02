@@ -2,10 +2,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CaseModel } from 'src/app/core/models/cases.models';
 import { WebexNotesModalComponent } from '../modals/webex-notes-modal/webex-notes-modal.component';
 import { MatDialog } from '@angular/material/dialog';
-import { GetCasesService } from '@modules/cases/services/get-cases.service';
 import { CaseOptionalModel } from 'src/app/core/models/cases-optional.models';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-case-card',
   templateUrl: './case-card.component.html',
@@ -50,32 +49,7 @@ export class CaseCardComponent {
       width: '60vw',
     })
   }
-  moveCase():void {
-    console.log(this.case.state)
-  }
-  showid():void {
-    console.log(this.case._id)
-    let state: CaseOptionalModel = {
-      state: !this.case.state
-    }
-
-    console.log(state);
-    
-
-    // this.caseService.refreshCasesAfterDeletion$(state,this.case._id,this.case.state.toString()).subscribe({
-    //   next: v => {
-    //     console.log(v);
-    //     this._snackBar.open(
-    //       'Case Moved','',this.snackBarConfig);
-    //     // this.router.navigate(['/','cases'])
-    //   },
-    //   error: e => {
-    //     console.log(e)
-    //   }
-    // })
-    
-    
-  } 
+  
   updateCasesMethod(content: CaseOptionalModel, case_id: string, type: string, msg?:string) {
     const data = {
       content: content,

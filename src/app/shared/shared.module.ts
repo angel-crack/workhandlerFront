@@ -22,7 +22,7 @@ import { AddNewCaseComponent } from '../modules/home/components/header/add-new-c
 import { AddNewWebexNotesComponent } from '../modules/home/components/header/add-new-webex-notes/add-new-webex-notes.component';
 import { NewCaseModalComponent } from './components/modals/new-case-modal/new-case-modal.component';
 import { NormalizeCasesPipe } from './pipes/normalize-cases.pipe';
-import {MatSnackBarModule} from '@angular/material/snack-bar'
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -65,7 +65,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
     ViewComponent,
     AddNewCaseComponent,
     AddNewWebexNotesComponent,
-    NewCaseModalComponent
+    NewCaseModalComponent,
   ]
 })
 export class SharedModule { }

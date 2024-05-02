@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of, pipe, switchMap } from 'rxjs';
-import { CaseModel } from 'src/app/core/models/cases.models';
+import { Observable, switchMap } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { CookieService } from 'ngx-cookie-service';
 import { CaseOptionalModel } from 'src/app/core/models/cases-optional.models';
@@ -9,7 +8,7 @@ import { CaseOptionalModel } from 'src/app/core/models/cases-optional.models';
 @Injectable({
   providedIn: 'root'
 })
-export class GetCasesService {
+export class CasesService {
   constructor(
     private http:HttpClient,
     private cookieService:CookieService
