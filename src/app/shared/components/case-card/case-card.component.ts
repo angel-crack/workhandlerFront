@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CaseModel } from 'src/app/core/models/cases.models';
 import { WebexNotesModalComponent } from '../modals/webex-notes-modal/webex-notes-modal.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -13,12 +13,6 @@ import { Router } from '@angular/router';
 })
 export class CaseCardComponent {
   
-  constructor(
-    private dialogRef: MatDialog,
-    private caseService:GetCasesService,
-    private _snackBar:MatSnackBar,
-    private router:Router) {}
-
   @Input() case: CaseModel = {
     '_id': '',
     'tittle' : '',
@@ -26,8 +20,17 @@ export class CaseCardComponent {
     'problem_description' : '',
     'current_status' : '',
     'action_plan' : '',
-    'last_action' : ''
+    'last_action' : '',
+    'state': true
   }
+
+  @Output() updateCases = new EventEmitter<{content: CaseOptionalModel, id: string, type: string}>();
+
+  constructor(
+    private dialogRef: MatDialog,
+    private _snackBar:MatSnackBar
+    ) {}
+
 
   snackBarConfig: MatSnackBarConfig = {
     duration: 1500
@@ -47,24 +50,40 @@ export class CaseCardComponent {
       width: '60vw',
     })
   }
-
+  moveCase():void {
+    console.log(this.case.state)
+  }
   showid():void {
     console.log(this.case._id)
     let state: CaseOptionalModel = {
-      state: false
+      state: !this.case.state
     }
-    console.log(state);
-    this.caseService.updateCase$(state,this.case._id).subscribe({
-      next: v => {
-        console.log(v);
-        this._snackBar.open(
-          'Case Moved','',this.snackBarConfig);
-        this.router.navigate(['/','cases'])
-      },
-      error: e => {
-        console.log(e)
-      }
-    })
-  }
 
+    console.log(state);
+    
+
+    // this.caseService.refreshCasesAfterDeletion$(state,this.case._id,this.case.state.toString()).subscribe({
+    //   next: v => {
+    //     console.log(v);
+    //     this._snackBar.open(
+    //       'Case Moved','',this.snackBarConfig);
+    //     // this.router.navigate(['/','cases'])
+    //   },
+    //   error: e => {
+    //     console.log(e)
+    //   }
+    // })
+    
+    
+  } 
+  updateCasesMethod(content: CaseOptionalModel, case_id: string, type: string, msg?:string) {
+    const data = {
+      content: content,
+      id: case_id,
+      type: type,
+      msg: msg
+    }
+    console.log("case card ==> ", data)
+    this.updateCases.emit(data);
+  }
 }

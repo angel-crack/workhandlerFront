@@ -6,4 +6,5 @@ export interface CaseOptionalModel{
     action_plan?:string,
     last_action?:string,
     state?:boolean
+    id?: string
 }

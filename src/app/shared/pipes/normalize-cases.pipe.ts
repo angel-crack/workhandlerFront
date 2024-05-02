@@ -14,7 +14,8 @@ export class NormalizeCasesPipe implements PipeTransform {
       problem_description: value.problem_description,
       current_status: value.current_status,
       action_plan: value.action_plan,
-      last_action: value.last_action}    
+      last_action: value.last_action,
+      state: value.state}    
 
     return sr;
   }

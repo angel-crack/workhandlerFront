@@ -11,8 +11,7 @@ import { environment } from 'src/environments/environment.development';
 
 
 export class UserComponent {
-constructor(private cookieService:CookieService, 
-            private router:Router){}
+constructor(private cookieService:CookieService){}
 logout(): void{
   this.cookieService.delete(environment.tokenName);
   console.log(this.cookieService.getAll());

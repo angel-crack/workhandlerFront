@@ -5,5 +5,6 @@ export interface CaseModel{
     problem_description:string,
     current_status:string,
     action_plan:string,
-    last_action:string
+    last_action:string,
+    state:boolean,
 }
