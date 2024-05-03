@@ -9,7 +9,7 @@ import { SearchComponent } from '../modules/home/components/header/search/search
 import { UserComponent } from '../modules/home/components/header/user/user.component';
 import { FilterComponent } from '../modules/home/components/header/filter/filter.component';
 import { ViewComponent } from '../modules/home/components/header/view/view.component';
-import { FormBuilder, FormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WebexNotesModalComponent } from './components/modals/webex-notes-modal/webex-notes-modal.component';
 import { MatButtonModule } from '@angular/material/button'; 
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -51,7 +51,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatIconModule,
     MatMenuModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ReactiveFormsModule
   ],
   exports: [
     SideBarComponent,

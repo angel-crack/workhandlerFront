@@ -4,6 +4,7 @@ import { Observable, switchMap } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { CookieService } from 'ngx-cookie-service';
 import { CaseOptionalModel } from 'src/app/core/models/cases-optional.models';
+import { CaseModel } from 'src/app/core/models/cases.models';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,16 @@ export class CasesService {
   }
   getAllMyCases$(type:string): Observable<any> {
     return this.http.get(`${this.URL}/cases/${type}`,this.options)
+  }
+
+  createCase$(content: CaseModel): Observable<any> {
+    let body = new URLSearchParams();
+
+    for (const [key, value] of Object.entries(content)) {
+      body.set(`${key}`,`${value}`)
+    }
+
+    return this.http.post(`${this.URL}/cases/`,body.toString(),this.options)
   }
 
   updateCase$(content: CaseOptionalModel,id:string): Observable<any> {
