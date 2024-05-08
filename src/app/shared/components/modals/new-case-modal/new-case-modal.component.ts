@@ -1,7 +1,7 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import { Observable, of } from 'rxjs';
 import { SharedDataFromModalService } from '../services/shared-data-from-modal.service';
+import { CasesService } from '@modules/cases/services/cases.service';
 
 @Component({
   selector: 'app-new-case-modal',
@@ -10,7 +10,9 @@ import { SharedDataFromModalService } from '../services/shared-data-from-modal.s
 })
 export class NewCaseModalComponent implements OnInit{
 
-  constructor(private modalDataService: SharedDataFromModalService) {}
+  constructor(private modalDataService: SharedDataFromModalService,
+              private caseService: CasesService
+  ) {}
 
   formLogin: FormGroup = new FormGroup({});
 
@@ -28,7 +30,7 @@ export class NewCaseModalComponent implements OnInit{
     console.log(formData)
     const newData = this.filterEmptyFields(formData);
     console.log(newData)
-    this.modalDataService.sendDataToComponents(newData)
+    this.caseService.createCase$(newData)
   }
 
   filterEmptyFields(obj: any): any {

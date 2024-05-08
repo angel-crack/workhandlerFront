@@ -3,7 +3,8 @@ import { CaseModel } from 'src/app/core/models/cases.models';
 import { WebexNotesModalComponent } from '../modals/webex-notes-modal/webex-notes-modal.component';
 import { MatDialog } from '@angular/material/dialog';
 import { CaseOptionalModel } from 'src/app/core/models/cases-optional.models';
-import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import { MatSnackBarConfig } from '@angular/material/snack-bar';
+import { CasesService } from '@modules/cases/services/cases.service';
 
 @Component({
   selector: 'app-case-card',
@@ -27,7 +28,7 @@ export class CaseCardComponent {
 
   constructor(
     private dialogRef: MatDialog,
-    private _snackBar:MatSnackBar
+    private caseService: CasesService
     ) {}
 
 
@@ -50,14 +51,20 @@ export class CaseCardComponent {
     })
   }
   
-  updateCasesMethod(content: CaseOptionalModel, case_id: string, type: string, msg?:string) {
-    const data = {
-      content: content,
-      id: case_id,
-      type: type,
-      msg: msg
+  updateCasesMethod(content: CaseOptionalModel, case_id: string, type: string) {
+    let snackBarMessage:string = 'Moved to: Cases'
+    if(this.case.state == true){
+      snackBarMessage = 'Moved to: History'
     }
-    console.log("case card ==> ", data)
-    this.updateCases.emit(data);
+    this.caseService.updateCase$(content, case_id, type, snackBarMessage)
   }
+
+  deleteCaseMethod(case_id: string, type:string):void {
+    let snackBarMessage:string = 'Case Archived Deleted'
+    if(this.case.state == true){
+      snackBarMessage = 'Case Deleted'
+    }
+    this.caseService.deleteCase$(case_id, type, snackBarMessage)
+  }
+
 }

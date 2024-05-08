@@ -1,4 +1,3 @@
 <div class="cases-page">
-    <app-case-card (updateCases)="updateCase($event)" [case]="case|normalizeCases" *ngFor="let case of cases"></app-case-card>
-    <!-- <p *ngFor="let dato of datos">{{dato | normalizeCases | json}}</p> -->
+    <app-case-card [case]="case|normalizeCases" *ngFor="let case of cases"></app-case-card>
 </div>

@@ -9,36 +9,19 @@ import { SnackbarMessageComponent } from 'src/app/shared/sub-modules/snackbar-me
   styleUrls: ['./history-page.component.css']
 })
 export class HistoryPageComponent implements OnInit,OnDestroy{
-  constructor(private caseService:CasesService, private snackMessage: SnackbarMessageComponent){}
+  constructor(private caseService:CasesService, 
+              private snackMessage: SnackbarMessageComponent){}
 
   listObservers$: Subscription[] = []
   cases: [] = []
 
   ngOnInit(): void {
-    const observer1$:Subscription = this.caseService.getAllMyCases$('false').subscribe(
-      (res) => {
-        this.cases = res
-      }
-    )
+    this.caseService.getAllMyCases$('false')
+    const observer1$:Subscription = this.caseService.CasesHistory.subscribe( v => this.cases = v)
     this.listObservers$.push(observer1$)
   }
   
   ngOnDestroy(): void {
     this.listObservers$.forEach( m => m.unsubscribe)
   }
-
-  updateCase( a: any): void{
-    const observer2$: Subscription = this.caseService.refreshCasesAfterDeletion$(a.content, a.id, a.type).subscribe({
-      next: updatedCases => {
-        this.cases = updatedCases; 
-        this.snackMessage.openSnack('Moved to Cases')
-      },
-      error: error => {
-        console.error('Error refreshing cases after deletion:', error);
-      }
-    });
-    this.listObservers$.push(observer2$);
-  }
-
-
 }

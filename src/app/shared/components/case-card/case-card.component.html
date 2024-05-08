@@ -17,7 +17,7 @@
           </button>
         </li>
         <li>
-          <button (click)="updateCasesMethod({state: !case.state}, case._id, case.state.toString())" class="dropdown-button" mat-icon-button>
+          <button (click)="deleteCaseMethod(this.case._id,this.case.state.toString())" class="dropdown-button" mat-icon-button>
             <mat-icon>delete_forever</mat-icon>
           </button>
         </li>
