@@ -10,7 +10,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatSnackBarModule} from '@angular/material/snack-bar'
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatSelectModule} from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
     FormsModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-     
+    MatTabsModule,
+    MatSelectModule
   ]
 })
 export class AuthModule { }

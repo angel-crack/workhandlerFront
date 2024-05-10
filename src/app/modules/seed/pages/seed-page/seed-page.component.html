@@ -1,0 +1,14 @@
+<mat-card class="container">
+    <mat-card-header>
+        <mat-card-title>Let's Seed some Cases </mat-card-title>
+        <mat-card-subtitle>for this user</mat-card-subtitle>
+      </mat-card-header>
+    <mat-card-content>
+        <mat-slider [min]="1" [max]="30" [discrete]="true"  [step]="1"  [showTickMarks]="false" >
+            <input matSliderThumb [(ngModel)]="value">
+          </mat-slider>
+    </mat-card-content>
+    <mat-card-actions>
+        <button (click)="sendData()" mat-button>SEED NOW</button>
+      </mat-card-actions>
+</mat-card>

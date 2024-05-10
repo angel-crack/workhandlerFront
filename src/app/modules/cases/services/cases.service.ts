@@ -1,12 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, switchMap } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { CookieService } from 'ngx-cookie-service';
 import { CaseOptionalModel } from 'src/app/core/models/cases-optional.models';
 import { CaseModel } from 'src/app/core/models/cases.models';
 import { SnackbarMessageComponent } from 'src/app/shared/sub-modules/snackbar-message/snackbar-message.component';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,7 @@ export class CasesService {
       .set('Content-Type', 'application/x-www-form-urlencoded')
   }
 
+  snackConfig: MatSnackBarConfig = {horizontalPosition: 'center',duration:2000};
 
   getAllMyCases$(type:string): void {
     this.http.get(`${this.URL}/cases/${type}`,this.options).subscribe({
@@ -55,7 +57,7 @@ export class CasesService {
 
     this.http.post(`${this.URL}/cases/`,body.toString(),this.options).subscribe({
       next:  v => {this.dialogRef.closeAll()
-                   this.snackMessage.openSnack('Case Created! Refreshing Case Page')
+                   this.snackMessage.openSnack('Case Created! Refreshing Case Page', this.snackConfig)
                    this.getAllMyCases$('true')
       },
       error:  e => {console.log(e)}
@@ -72,7 +74,7 @@ export class CasesService {
     this.http.put( `${this.URL}/cases/${id}`, body.toString(), this.options).subscribe({
       next: v => {
         this.getAllMyCases$(type)
-        this.snackMessage.openSnack(msg)
+        this.snackMessage.openSnack(msg, this.snackConfig)
       },
       error: e => {
         console.log(e)
@@ -83,7 +85,7 @@ export class CasesService {
   deleteCase$(id: string, type: string, msg: string): void {
     this.http.delete( `${this.URL}/cases/${id}`, this.options).subscribe({
       next: v => {
-        this.snackMessage.openSnack(msg)
+        this.snackMessage.openSnack(msg, this.snackConfig)
         this.getAllMyCases$(type)
       },
       error: e => {
@@ -91,4 +93,17 @@ export class CasesService {
       }
     })
   }  
+
+  SeedSomeCases$(i1: number, i2:number): void {
+    
+    this.http.get(`${this.URL}/seed/${i1}_${i2}`,this.options).subscribe({
+      next: v => {
+        this.getAllMyCases$('true')
+        this.snackMessage.openSnack(`${i2-i1+1} Cases Seed for this user`, this.snackConfig)
+      },
+      error: e => {
+        console.log(e)
+      }
+    })
+  }
 }

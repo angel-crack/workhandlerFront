@@ -29,6 +29,11 @@ const routes: Routes = [
     canActivate: [sessionGuard]
   },
   {
+    path: 'seed',
+    loadChildren: () => import('@modules/seed/seed.module').then(m => m.SeedModule),
+    canActivate: [sessionGuard]
+  },
+  {
     path: '**',
     redirectTo: '/cases'
   }

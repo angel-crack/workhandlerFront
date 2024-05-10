@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import { SharedDataFromModalService } from '../services/shared-data-from-modal.service';
 import { CasesService } from '@modules/cases/services/cases.service';
 
 @Component({
@@ -10,9 +9,7 @@ import { CasesService } from '@modules/cases/services/cases.service';
 })
 export class NewCaseModalComponent implements OnInit{
 
-  constructor(private modalDataService: SharedDataFromModalService,
-              private caseService: CasesService
-  ) {}
+  constructor(private caseService: CasesService) {}
 
   formLogin: FormGroup = new FormGroup({});
 

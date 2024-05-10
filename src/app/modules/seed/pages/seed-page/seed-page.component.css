@@ -1,0 +1,9 @@
+.container{
+    width: 40%;
+    left: 3%;
+    top: 5%
+}
+
+.mat-mdc-slider {
+    width: 95%;
+  }

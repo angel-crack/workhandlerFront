@@ -34,6 +34,11 @@ export class SideBarComponent{
       name: 'Options',
       icon: 'settings',
       router: ['/','options']
+    },
+    {
+      name: 'Seed',
+      icon: 'expand_more',
+      router: ['/','seed']
     }
   ]
   

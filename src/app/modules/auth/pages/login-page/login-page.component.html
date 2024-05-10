@@ -1,28 +1,95 @@
-<form [formGroup]="formLogin" class="form-container">
-    <mat-card class="popup">
-        <!-- <mat-card-title>Login 2 WorkHandler</mat-card-title> -->
-        <mat-card-content>
-            <div class="icon-container">
-                <div class="example-header-image"></div>
-            </div>
-            <br>
-            <mat-form-field class="email">
-                <mat-label>e-Mail</mat-label>
-                <input formControlName="email" matInput>
-            </mat-form-field>
-    
-            <mat-form-field class="password">
-                <mat-label>Enter your password</mat-label>
-                <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
-                <!-- <button type="button" matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </button> -->
-            </mat-form-field>
-    
-        </mat-card-content>
+<mat-card class="popup">
+    <mat-card-content>
+        <div class="icon-container">
+            <div class="example-header-image"></div>
+        </div>
+        <br>
+        <div>
+            <mat-tab-group [selectedIndex]="tabIndex" (selectedIndexChange)="tabIndex=$event">
+                <mat-tab label="Sign In"> <ng-container *ngTemplateOutlet="loginForm"></ng-container>  </mat-tab>
+                <mat-tab label="Sign Up"> <ng-container *ngTemplateOutlet="signupForm"></ng-container> </mat-tab>
+                <mat-tab label="Reset password"> <ng-container *ngTemplateOutlet="resetPassForm"></ng-container> </mat-tab>
+            </mat-tab-group>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+
+<ng-template #loginForm>
+    <form [formGroup]="formLogin" class="form-container">
+        <br>
+        <mat-form-field class="email">
+            <mat-label>e-Mail</mat-label>
+            <input formControlName="email" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="password">
+            <mat-label>Enter your password</mat-label>
+            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+        </mat-form-field>
         <mat-card-actions>
             <button (click)="login()" mat-button color="primary">Login</button>
-          </mat-card-actions>
-    </mat-card>
-</form>
+        </mat-card-actions>
+    </form>
+</ng-template>
 
+<ng-template #signupForm>
+    <form [formGroup]="formSignUp" class="form-container">
+        <br>
+        <mat-form-field class="email">
+            <mat-label>Name:</mat-label>
+            <input formControlName="name" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="email">
+            <mat-label>Last Name:</mat-label>
+            <input formControlName="lastName" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="email">
+            <mat-label>e-Mail</mat-label>
+            <input formControlName="email" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="password">
+            <mat-label>Enter your password</mat-label>
+            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+        </mat-form-field>
+
+        <mat-form-field class="password">
+            <mat-label>Repeat your password</mat-label>
+            <input formControlName="repeatPassword" matInput [type]="hide ? 'password' : 'text'">
+        </mat-form-field>
+
+        <mat-form-field class="email">
+            <mat-label>Role:</mat-label>
+            <mat-select formControlName="role">
+                <mat-option value="Tier 1">Tier 1</mat-option>
+                <mat-option value="Tier 2">Tier 2</mat-option>
+                <mat-option value="Tier 3">Tier 3</mat-option>
+              </mat-select>
+        </mat-form-field>
+
+        <mat-card-actions>
+            <button (click)="createUser()" mat-button color="primary">Create User</button>
+        </mat-card-actions>
+    </form>
+</ng-template>
+
+<ng-template #resetPassForm>
+    <form [formGroup]="formResetPass" class="form-container">
+        <br>
+        <mat-form-field class="email">
+            <mat-label>e-Mail</mat-label>
+            <input formControlName="email" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="password">
+            <mat-label>Enter your password</mat-label>
+            <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+        </mat-form-field>
+        <mat-card-actions>
+            <button (click)="login()" mat-button color="primary">Reset Password</button>
+        </mat-card-actions>
+    </form>
+</ng-template>
