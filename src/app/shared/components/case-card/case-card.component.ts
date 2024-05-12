@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CaseModel } from 'src/app/core/models/cases.models';
 import { WebexNotesModalComponent } from '../modals/webex-notes-modal/webex-notes-modal.component';
+import { CaseInfoComponent } from '../modals/case-info/case-info.component';
 import { MatDialog } from '@angular/material/dialog';
 import { CaseOptionalModel } from 'src/app/core/models/cases-optional.models';
 import { MatSnackBarConfig } from '@angular/material/snack-bar';
@@ -49,6 +50,14 @@ export class CaseCardComponent {
       height: '70vh',
       width: '60vw',
     })
+  }
+
+  openModalCaseInfo():void {
+    this.dialogRef.open(CaseInfoComponent,{
+      data:  this.case,
+      height: '95vh',
+      width: '60vw',
+    },)
   }
   
   updateCasesMethod(content: CaseOptionalModel, case_id: string, type: string) {

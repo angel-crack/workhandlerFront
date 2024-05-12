@@ -1,0 +1,38 @@
+<div class="container">
+    <form [formGroup]="formLogin" class="example-form">    
+      <mat-form-field class="example-full-width">
+        <mat-label>Tittle</mat-label>
+        <input formControlName="tittle" matInput type="text" name="Tittle" placeholder="Call Routing Issues">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>SR</mat-label>
+        <input formControlName="number" matInput type="text" name="sr" placeholder="697832132">
+      </mat-form-field>
+      
+      <mat-form-field class="example-full-width webex-summary">
+        <mat-label>Problem Description</mat-label>
+        <textarea formControlName="problem_description" matInput name="problemDescription" rows="4" cols="40" placeholder="Calls cannot be completed as dial, internal calls"></textarea>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width webex-summary">
+        <mat-label>Last Action</mat-label>
+        <textarea formControlName="last_action" matInput name="lastAction" rows="4" cols="40" placeholder="Calls cannot be completed as dial, internal calls"></textarea>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width webex-summary">
+        <mat-label>Current Status</mat-label>
+        <textarea formControlName="current_status" matInput name="currentStatus" rows="4" cols="40" placeholder="Calls cannot be completed as dial, internal calls"></textarea>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width webex-summary">
+        <mat-label>Action Plan</mat-label>
+        <textarea formControlName="action_plan" matInput name="actionPlan" rows="4" cols="40" placeholder="Calls cannot be completed as dial, internal calls"></textarea>
+      </mat-form-field>
+
+      </form>
+    <button class="modal-button" mat-raised-button *ngFor="let button of buttons">
+      <span>{{button.name}}</span>
+      <mat-icon>{{button.icon}}</mat-icon>
+    </button>
+</div>
