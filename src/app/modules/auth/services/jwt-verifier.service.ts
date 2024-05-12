@@ -14,7 +14,8 @@ export class JwtVerifierService {
     console.log('Expiration: ', time_exp)
     const time_iat = new Date(token_object.iat * 1000)
     console.log('Issued @: ', time_iat)
-    if (time_exp > time_iat){
+    const timeNow = new Date()
+    if (time_exp > timeNow){
       console.log("Token Activo")
       return false
     }

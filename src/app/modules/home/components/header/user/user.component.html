@@ -1,6 +1,6 @@
 <div class="user-section">
     <button class="profile" mat-icon-button [matMenuTriggerFor]="menu">
-        <span>AU</span> 
+        <span>{{UserInfo.name.charAt(0)}}{{UserInfo.lastName.charAt(0)}}</span> 
     </button>
     <mat-menu class="menu-options" #menu="matMenu">
         <button class="persona" mat-menu-item>
@@ -21,7 +21,7 @@
         </button>
     </mat-menu>
     <div class="user-name">
-        <p>Angel Ubarnes</p>
-        <p>Tier 2 Engineer</p>
+        <p>{{UserInfo.name}} {{UserInfo.lastName}}</p>
+        <p>{{UserInfo.role}}</p>
     </div>
 </div>

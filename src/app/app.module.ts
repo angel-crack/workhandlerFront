@@ -9,6 +9,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { HttpClientModule } from '@angular/common/http';
 import {CookieService} from 'ngx-cookie-service';
 import { JwtHelperService, JWT_OPTIONS  } from '@auth0/angular-jwt';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -22,6 +23,7 @@ import { JwtHelperService, JWT_OPTIONS  } from '@auth0/angular-jwt';
     MatDialogModule,
     MatMenuModule,
     HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [provideAnimations(),
               CookieService,

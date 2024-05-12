@@ -98,7 +98,7 @@ export class LoginPageComponent implements OnInit, OnDestroy{
 
   createUser(): void{
     const valueForm = this.formSignUp.value
-    this.userService.createCase$(valueForm)
+    this.userService.createUser$(valueForm)
   }
 
   ngOnDestroy(): void {
